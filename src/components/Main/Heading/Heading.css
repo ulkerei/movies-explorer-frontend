@@ -1,0 +1,18 @@
+.main__heading {
+  margin: 0;
+  padding: 0 0 23px;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.21;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-align: left;
+  border-bottom: 1px #dadada solid;
+}
+
+@media screen and (max-width: 500px) {
+  .main__heading {
+    font-size: calc(22px - (500px - 100vw)/45);
+  }
+}

@@ -1,0 +1,20 @@
+.account-button {
+  margin: 0;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  border: 2px #aaa solid;
+  color: #fff;
+  text-decoration: none;
+}
+
+.account-button:hover {
+  background-color: #3ddc84;
+}
+
+.account-button_pic {
+  width: 12px;
+  height: 14px;
+}

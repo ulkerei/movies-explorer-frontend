@@ -1,0 +1,14 @@
+.logo {
+  margin: 0;
+  padding: 0;
+}
+
+.logo__image {
+  width: 38px;
+  height: 38px;
+  animation: spin 9s alternate ease-in-out infinite;
+}
+
+.logo:hover > .logo__image {
+  animation: spin 3s linear infinite;
+}

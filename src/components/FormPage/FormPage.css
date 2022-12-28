@@ -1,0 +1,138 @@
+.formPage {
+  width: 456px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+}
+
+.formPage__header {
+  margin: 40px 0;
+  padding: 0;
+  color: inherit;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.formPage__form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 387px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.formPage__label {
+  margin: 0;
+  padding: 0;
+  color: #8b8b8b;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.formPage__input {
+  margin: 10px 0 20px;
+  padding: 15px;
+  width: 100%;
+  background-color: #2f2f2f;
+  box-sizing: border-box;
+  border-style: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.21;
+  font-weight: 400;
+}
+
+.formPage__input:hover {
+  background-color: #424242;
+}
+
+.formPage__input:focus {
+  background-color: #8b8b8b;
+  outline: none;
+  color: #000;
+}
+
+.formPage__input_type_password {
+  margin-bottom: 10px;
+  color: #ee3465;
+}
+
+.formPage__error {
+  color: #ee3465;
+}
+
+.formPage__footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.formPage__text {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.21;
+}
+
+@media screen and (max-width: 520px){
+  .formPage {
+    width: calc(456px - (520px - 100vw)/1.47);
+    align-items: center;
+  }
+
+  .formPage__logo {
+    margin-top: calc((520px - 100vw)/8);
+  }
+
+  .formPage__header {
+    margin-top: calc(40px + (520px - 100vw)/20);
+    margin-bottom: calc(40px + (520px - 100vw)/5);
+  }
+
+  .formPage__text {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .formPage {
+    width: 100%;
+  }
+
+  .formPage__logo {
+    margin-top: 25px;
+  }
+
+  .formPage__header {
+    margin: 50px 0 80px;
+  }
+
+  .formPage__text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 520px) and (min-height: 700px) {
+  .formPage__form {
+    min-height: calc(387px + (100vh - 700px)/0.81);
+  }
+}
+
+@media screen and (max-width: 520px) and (min-height: 800px) {
+  .formPage__form {
+    min-height: calc(510px + (100vh - 800px));
+  }
+}

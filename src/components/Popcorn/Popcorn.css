@@ -1,0 +1,35 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}
+
+.popcorn {
+  position: fixed;
+}
+
+.popcorn_type_left {
+  width: 80vw;
+  height: 80vh;
+  top: 10vh;
+  right: 10vw;
+  animation: spin 9s ease-in-out infinite;
+}
+
+.popcorn_type_right {
+  width: 50vw;
+  height: 50vh;
+  top: 25vh;
+  left: 25vw;
+  animation: spin 5.1s reverse ease infinite;
+}
+
+.popcorn-image_type_left {
+  animation: spin 2s reverse ease-in-out infinite;
+}
+
+.popcorn-image_type_right {
+  animation: spin 3s ease-in-out infinite;
+}

@@ -1,0 +1,107 @@
+.button {
+  width: fit-content;
+  height: 36px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: none;
+  margin: 0;
+  padding: 0 5px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.button_type_back {
+  font-weight: 400;
+  z-index: 1;
+  position: fixed;
+  top: calc(50vh + 260px);
+  height: 40px;
+  background-color: transparent;
+  color: #4285f4;
+}
+
+.button_type_back:hover {
+  background-color: #424242;
+  color: #4285f4;
+}
+
+.button_type_blue {
+  height: 45px;
+  background-color: #4285f4;
+  color: #fff;
+}
+
+.button_type_blue:hover {
+  background-color: #000;
+  color: #4285f4;
+}
+
+.button_type_movies {
+  margin: 50px 0 140px;
+  width: 100%;
+  background-color: #2f2f2f;
+  color: #fff;
+}
+
+.button_type_movies:hover {
+  background-color: #3ddc84;
+}
+
+.button_type_movies_hidden {
+  display: none;
+}
+
+.button_type_submit {
+  position: absolute;
+  bottom: 0;
+  margin: 69px 0 16px;
+  width: 100%;
+}
+
+.button_type_link {
+  position: relative;
+  padding: 0;
+  margin: 1px 0 0 6px;
+  width: fit-content;
+  height: fit-content;
+  top: unset;
+  bottom: unset;
+  text-decoration: none;
+}
+
+@media screen and (max-height: 700px) {
+  .button_type_back {
+    top: unset;
+    bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .button_type_back {
+    top: unset;
+    bottom: calc(50px - (520px - 100vw)/5.8);
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .button_type_back {
+    top: unset;
+    bottom: 15px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .button_type_blue {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .button_type_blue {
+    font-size: 12px;
+  }
+}
