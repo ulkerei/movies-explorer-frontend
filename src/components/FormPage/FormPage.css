@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: flex-start;
   color: #fff;
+  background-color: #202020;
 }
 
 .formPage__header {
@@ -56,9 +57,9 @@
 }
 
 .formPage__input:focus {
-  background-color: #8b8b8b;
+  background-color: #00000080;
   outline: none;
-  color: #000;
+  border: 1px #fff solid;
 }
 
 .formPage__input_type_password {

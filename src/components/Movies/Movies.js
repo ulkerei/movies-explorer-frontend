@@ -10,14 +10,14 @@ import Filler from './Filler/Filler';
 
 function Movies(props) {
   return (
-    <div className='movies'>
+    <section className='movies'>
       <Header loggedOn='true' openNav={props.openNav}/>
       <SearchForm />
       <Preloader isLoading={false} />
       <MoviesCardList classtype={props.classtype} />
       {(props.classtype === 'search') ? <Button styletype='movies' text='Ещё' /> : <Filler text='' />}
       <Footer />
-    </div>
+    </section>
   );
 }
 

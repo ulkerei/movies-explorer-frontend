@@ -10,7 +10,7 @@ import Portfolio from './Portfolio/Portfolio';
 
 function Main(props) {
   return (
-    <div className='main'>
+    <main className='main'>
       <Header loggedOn={props.loggedOn} openNav={props.openNav}/>
       <Promo />
       <AboutProject />
@@ -18,7 +18,7 @@ function Main(props) {
       <AboutMe />
       <Portfolio />
       <Footer />
-    </div>
+    </main>
   );
 }
 

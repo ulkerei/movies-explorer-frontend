@@ -6,7 +6,7 @@ import AccountButton from '../AccountButton/AccountButton';
 
 function Header(props) {
   return (
-    <nav className='header'>
+    <header className='header'>
       <Logo />
       {(props.loggedOn) ? (<>
       <div className='header__nav'>
@@ -27,8 +27,7 @@ function Header(props) {
       <a className='header__link header__link_type_unsigned' href='./signin'>Войти</a>
     </div>
       )}
-
-    </nav>
+    </header>
   );
 }
 

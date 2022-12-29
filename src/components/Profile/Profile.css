@@ -5,8 +5,10 @@
   padding: o;
   width: 100%;
   min-height: 100vh;
+  max-width: 1300px;
   align-items: center;
   justify-content: center;
+  background-color: #202020;
 }
 
 .profile__form {  
@@ -62,8 +64,9 @@
 }
 
 .profile__input:focus {
-  background-color: #8b8b8b;
-  color: #000;
+  background-color: #00000080;
+  outline: none;
+  border: 1px #fff solid;
 }
 
 .profile__button {

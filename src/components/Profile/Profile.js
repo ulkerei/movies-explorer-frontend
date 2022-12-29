@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 function Profile(props) {
   return (
-    <div className='profile'>
+    <section className='profile'>
       <Header loggedOn='true' openNav={props.openNav}/>
       <form className='profile__form'>
         <h2 className='profile__header'>Привет, Пеоваг!</h2>
@@ -42,7 +42,7 @@ function Profile(props) {
           styletype='button profile__button profile__button_type_exit'
           text='Выйти из аккаунта'
         />
-    </div>
+    </section>
   );
 }
 

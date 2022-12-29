@@ -4,7 +4,7 @@ import Heading from '../Heading/Heading';
 
 function AboutProject() {
   return (
-    <div className='about-project' id='about'>
+    <section className='about-project' id='about'>
       <Heading text='О проекте' />
       <ul className='about-project__info'>
         <li className='about-project__article'>
@@ -22,7 +22,7 @@ function AboutProject() {
         <li className='about-project__time-text'>Back-end</li>
         <li className='about-project__time-text'>Front-end</li>
       </ul>
-    </div>
+    </section>
   );
 }
 

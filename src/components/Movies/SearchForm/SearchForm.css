@@ -41,10 +41,10 @@
   background-color: #424242;
 }
 
-.search-form:focus {
-  background-color: #8b8b8b;
+.search-form__input:focus {
+  background-color: #00000080;
   outline: none;
-  color: #000;
+  border: 1px #fff solid;
 }
 
 .search-form__button {

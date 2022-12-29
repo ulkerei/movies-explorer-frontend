@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 function FormPage(props) {
   return (
-    <div className='formPage'>
+    <section className='formPage'>
       <Logo/>
       <h2 className='formPage__header'>{props.header}</h2>
       <form className="formPage__form">
@@ -43,7 +43,7 @@ function FormPage(props) {
         >{(props.changeButton === 'signin') ? 'Войти' : 'Регистрация'}</a>
       </div>
 
-    </div>
+    </section>
   );
 }
 

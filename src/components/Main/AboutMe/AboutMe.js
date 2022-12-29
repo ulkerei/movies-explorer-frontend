@@ -6,7 +6,7 @@ import photo from '../../../images/photo.jpg'
 
 function AboutMe() {
   return (
-    <div className='about-me'>
+    <section className='about-me'>
       <Heading text='Студент' />
       <div className='about-me__main'>
         <img className='about-me__image' src={photo} alt='The Other' />
@@ -17,7 +17,7 @@ function AboutMe() {
           <a className='about-me__link' target='_blank' rel='noreferrer' href='https://github.com/ulkerei'>Github</a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
