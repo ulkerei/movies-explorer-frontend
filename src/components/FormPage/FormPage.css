@@ -38,6 +38,10 @@
   font-weight: 400;
 }
 
+.formPage__label_hidden {
+  display: none;
+}
+
 .formPage__input {
   margin: 10px 0 20px;
   padding: 15px;
@@ -50,6 +54,10 @@
   font-size: 13px;
   line-height: 1.21;
   font-weight: 400;
+}
+
+.formPage__input_hidden {
+  display: none;
 }
 
 .formPage__input:hover {

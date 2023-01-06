@@ -11,8 +11,8 @@ import Filler from './Filler/Filler';
 function Movies(props) {
   return (
     <section className='movies'>
-      <Header loggedOn='true' openNav={props.openNav}/>
-      <SearchForm />
+      <Header loggedOn={props.loggedOn} openNav={props.openNav} />
+      <SearchForm onSearch={props.onSearch}/>
       <Preloader isLoading={false} />
       <MoviesCardList classtype={props.classtype} />
       {(props.classtype === 'search') ? <Button styletype='movies' text='Ещё' /> : <Filler text='' />}

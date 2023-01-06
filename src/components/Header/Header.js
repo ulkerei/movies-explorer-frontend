@@ -10,8 +10,8 @@ function Header(props) {
       <Logo />
       {(props.loggedOn) ? (<>
       <div className='header__nav'>
-        <a className='header__link header__link_type_center' href='./movies'>Фильмы</a>
-        <a className='header__link header__link_type_center' href='./saved-movies'>Сохранённые фильмы</a>
+        <a className='header__link header__link_type_center' href='./movies' >Фильмы</a>
+        <a className='header__link header__link_type_center' href='./saved-movies' >Сохранённые фильмы</a>
       </div>
       <AccountButton className='header__link header__link_type_profile' />
       <button

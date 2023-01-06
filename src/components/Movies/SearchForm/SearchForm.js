@@ -5,7 +5,7 @@ import Filtercheckbox from '../FilterCheckbox/FilterCheckbox';
 
 function SearchForm(props) {
   return (
-    <form className='search-form'>            
+    <form className='search-form' onSubmit={props.onSearch}>            
       <div className='search-form__container'>
         <input
           type='text'
@@ -15,7 +15,7 @@ function SearchForm(props) {
           className='search-form__input'
           defaultValue='Фильм'
         />
-        <Button type='submit' styletype='blue search-form__button' text='Найти' />        
+        <button type='submit' className='button button_type_blue search-form__button'>Найти</button>   
       </div>
       <Filtercheckbox />
     </form>

@@ -11,7 +11,7 @@ import Portfolio from './Portfolio/Portfolio';
 function Main(props) {
   return (
     <main className='main'>
-      <Header loggedOn={props.loggedOn} openNav={props.openNav}/>
+      <Header loggedOn={props.loggedOn} openNav={props.openNav} setPath={props.setPath} currentPath='/'/>
       <Promo />
       <AboutProject />
       <Techs />

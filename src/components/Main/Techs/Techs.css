@@ -59,6 +59,14 @@
   text-align: center;
 }
 
+
+@media screen and (min-width: 1300px) {
+  .techs {
+    padding-left: calc(70px + (100vw - 1317px)/2);
+    padding-right: calc(70px + (100vw - 1317px)/2);
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .techs {
     padding-left: calc(70px - (1000px - 100vw)/10);
