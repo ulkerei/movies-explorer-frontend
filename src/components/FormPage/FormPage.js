@@ -1,23 +1,50 @@
 import './FormPage.css';
 import Logo from '../Logo/Logo'
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+const validation = require('validator');
 
 function FormPage(props) {
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
 
+  const [isNameValid, setIsNameValid] = useState(props.submitButton === 'login');
+  const [isEmailValid, setIsEmailValid] = useState(Boolean(email));
+  const [isPasswordValid, setIsPasswordValid] = useState(Boolean(password));
+  const [isValid, setIsValid] = useState(isNameValid && isEmailValid && isPasswordValid);
+
+  const [error, setError] = useState(isValid ? '' : 'Все поля обязательные!');
+
   function handleNameChange(e) {
     setName(e.target.value);
+    const regex = /^[a-zа-яё♥ -]*$/i; //Можно я оставлю сердечко ♥
+    const format = regex.test(e.target.value); 
+    const minlength = e.target.value.length > 1;
+    const maxlength = e.target.value.length < 31;
+    const required = e.target.value.length !== 0;
+    !format && setError('Неправильный формат имени');
+    !minlength && setError('Слишком короткое имя');
+    !maxlength && setError('Слишком длинное имя');
+    !required && setError('Все поля обязательные!');
+    setIsNameValid(format && minlength && maxlength);
+
   }
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
+    const required = e.target.value.length !== 0;
+    const format = validation.isEmail(e.target.value);
+    !format && setError('Неправильный формат e-mail');
+    !required && setError('Все поля обязательные!');
+    setIsEmailValid(format && required);
   }
   
   function handlePasswordChange(e) {
     setPassword(e.target.value);
+    const required = e.target.value.length !== 0;
+    !required && setError('Все поля обязательные!');
+    setIsPasswordValid(required);
   }
 
   function handleSubmit(e) {
@@ -32,8 +59,13 @@ function FormPage(props) {
     setPassword('');
   } 
 
+  useEffect(() => {
+    setIsValid(isNameValid && isEmailValid && isPasswordValid);
+    (isNameValid && isEmailValid && isPasswordValid) && setError('');
+  }, [isNameValid, isEmailValid, isPasswordValid])
+
   return (
-    <section className='formPage'>
+    <main className='formPage'>
       <Logo/>
       <h2 className='formPage__header'>{props.header}</h2>
       <form 
@@ -74,12 +106,14 @@ function FormPage(props) {
           className="formPage__input formPage__input_type_password"
           placeholder="Пароль"
           value={password || ''}
+          autoComplete=''
           onChange={handlePasswordChange}
         /> 
-        <p className='formPage__label formPage__error'>Error?</p>
+        <p className='formPage__label formPage__error'>{error}</p>
         <button 
           type='submit' 
-          className={`button button_type_${props.submitButton} button_type_submit button_type_blue`}
+          disabled={!isValid} 
+          className={ isValid ? `button button_type_${props.submitButton} button_type_submit button_type_blue` : `button button_type_${props.submitButton} button_type_submit button_type_blue button_type_blue_inactive` }
         >{(props.submitButton === 'login') ? 'Войти' : 'Зарегистрироваться'}</button>
       </form>
       <div className='formPage__footer'>
@@ -90,7 +124,7 @@ function FormPage(props) {
         >{(props.changeButton === 'signin') ? 'Войти' : 'Регистрация'}</a>
       </div>
 
-    </section>
+    </main>
   );
 }
 

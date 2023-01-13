@@ -16,6 +16,6 @@ class MoviesApi {
 
 }
 
-const moviesApi = new MoviesApi();
+const movApi = new MoviesApi();
 
-export default moviesApi;
+export default movApi;

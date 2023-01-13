@@ -14,10 +14,19 @@
 .search-form__container {
   width: 100%;
   margin: 0;
-  padding: 0 0 39px;
+  padding: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.search-form__error {
+  min-height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0 0 9px;
+  color: #ee3465;
 }
 
 .search-form__input {

@@ -31,27 +31,43 @@ class MainApi {
     .then(res => this._check(res))
   }
 
-/*
-  postNewCard(values) {
-    return fetch(`${this._baseUrl}/cards`, {
+  getMyMovies () {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'GET',
+      headers: this._headers,
+    })
+    .then(res => this._check(res))
+  }
+
+  postNewMovie(values) {
+    return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: values.place,
-        link: values.link
+        country: values.country,
+        director: values.director,
+        duration: values.duration,
+        year: values.year,
+        description: values.description,
+        image: values.image,
+        thumbnail: values.thumbnail,
+        trailerLink: values.trailerLink,
+        movieId: values.movieId,
+        nameRU: values.nameRU,
+        nameEN: values.nameEN
       })
     })
     .then(res => this._check(res))
   }
 
-  deleteOwnersCard(cardId) {
-      return fetch(`${this._baseUrl}/cards/${cardId}`, {
+  deleteOwnersMovie(movieId) {
+      return fetch(`${this._baseUrl}/movies/${movieId}`, {
         method: 'DELETE',
         headers: this._headers
       })
       .then(res => this._check(res))
     }
-*/
+
 
   componentDidMount() {
     this.setUserInfo(this.getProfileInfo());
@@ -67,10 +83,6 @@ class MainApi {
 
 const myApi = new MainApi({
   baseUrl: 'https://api.movielib.nomoredomains.club',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-  }
 });
 
 export default myApi;

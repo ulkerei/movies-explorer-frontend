@@ -7,12 +7,12 @@ import Popcorn from '../Popcorn/Popcorn';
 function Page404() {
   const history = useHistory();
   return (
-    <section className='page404'>
+    <main className='page404'>
       <h2 className='page404__header'>404</h2>
       <p className='page404__text'>Страница не найдена</p>
       <Button styletype='back' text='Назад' onClick={() => history.goBack()}/>
       <Popcorn />
-    </section>
+    </main>
   );
 }
 

@@ -13,7 +13,7 @@ function AboutMe() {
         <div className='about-me__container'>
           <h3 className='about-me__name'>Юлка</h3>
           <p className='about-me__status'>Другое</p>
-          <p className='about-me__text'>I'll paste it later... Filler: bla bla bla bla bla bla bla bla bla &ITY* rwwetwettwe  werwerwr  bla bla bla bla dsgaf bla bla sdgagsdgf sda  adfg asa ssdf gdfhkhgdra dshda rds agdfgdga agr agga agg bla bla bla bla bla bla</p>
+          <p className='about-me__text'>Кандидат тех самых наук, учитель плохого и хорошего, читатель, писатель, вышиватель, иногда выживатель. Люблю лес, болота, холмы, старинные замки и ветряки. Вожу максимально экологичную "Газель".</p>
           <a className='about-me__link' target='_blank' rel='noreferrer' href='https://github.com/ulkerei'>Github</a>
         </div>
       </div>

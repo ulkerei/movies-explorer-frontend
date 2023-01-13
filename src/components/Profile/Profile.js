@@ -1,44 +1,68 @@
 import './Profile.css';
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Header from '../Header/Header'
 import Button from '../Button/Button';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
+const validation = require('validator');
 
 function Profile(props) {
   const currentUser = useContext(CurrentUserContext);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState(currentUser.name);
+  const [email, setEmail] = useState(currentUser.email);
+
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isEmailValid, setIsEmailValid] = useState(true);
+  const [isValid, setIsValid] = useState(true);
+
+  const [error, setError] = useState('');
   
   function handleNameChange(e) {
     setName(e.target.value);
+    const regex = /^[a-zа-яё♥ -]*$/i; //Можно же я оставлю тут сердечко)
+    const format = regex.test(e.target.value); 
+    const minlength = e.target.value.length > 1;
+    const maxlength = e.target.value.length < 31;
+    !format && setError('Неправильный формат имени');
+    !minlength && setError('Слишком короткое имя');
+    !maxlength && setError('Слишком длинное имя');
+    setIsNameValid(format && minlength && maxlength);
   }
   
   function handleEmailChange(e) {
     setEmail(e.target.value);
+    const format = validation.isEmail(e.target.value);
+    !format && setError('Неправильный формат e-mail');
+    setIsEmailValid(format);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(name,email);
     props.onUpdate({
       name,
       email
     });
+    setName(currentUser.name);
+    setEmail(currentUser.email);
   } 
 
-  React.useEffect(() => {
+  useEffect(() => {
     setName(currentUser.name);
     setEmail(currentUser.email);
   }, [currentUser]); 
 
-  
+  useEffect(() => {
+    setIsValid((isNameValid && isEmailValid) && ((name !== currentUser.name) || (email !== currentUser.email)));
+    (isNameValid && isEmailValid) && setError('');
+  }, [isNameValid, isEmailValid, name, currentUser, email])
+
+
   return (
-    <section className='profile'>
+    <main className='profile'>
       <Header loggedOn='true' openNav={props.openNav} setPath={props.setPath} currentPath='/profile'/>
       <form className='profile__form' onSubmit={handleSubmit}>
-        <h2 className='profile__header'>Привет, {currentUser.name}</h2>
+        <h2 className='profile__header'>Привет, {currentUser.name}!</h2>
         <div className='profile__line'>
           <label htmlFor='name' className="profile__text profile__label profile__label_type_name">Имя</label>
           <input
@@ -69,9 +93,11 @@ function Profile(props) {
             onChange={handleEmailChange}
           />
         </div>
+        <p className='profile__error'>{error}</p>
         <button 
-          type='submit' 
-          className='button profile__button profile__button_type_edit'
+          type='submit'
+          disabled={!isValid} 
+          className={ isValid ? 'button profile__button profile__button_type_edit' : 'button profile__button profile__button_type_edit profile__button_inactive' }
           text=''
         >Редактировать</button>
       </form>
@@ -81,7 +107,7 @@ function Profile(props) {
           text='Выйти из аккаунта'
           onClick={props.onLogout}
         />
-    </section>
+    </main>
   );
 }
 

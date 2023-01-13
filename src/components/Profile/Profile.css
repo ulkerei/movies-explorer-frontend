@@ -41,7 +41,6 @@
 
 .profile__line:last-of-type {
   border-top: 1px #424242 solid;
-  padding-bottom: 200px;
 }
 
 .profile__text {
@@ -69,6 +68,15 @@
   border: 1px #fff solid;
 }
 
+.profile__error {
+  min-height: 30px;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 0 0 163px;
+  margin: 0;
+  color: #ee3465;
+}
+
 .profile__button {
   margin: 0;
   padding: 0;
@@ -83,14 +91,18 @@
   color: #ee3465;
 }
 
+.profile__button_inactive, .profile__button_inactive:hover {
+  color: #424242;
+}
+
 @media screen and (max-width: 1000px) {
   .profile__header {
     margin-top: calc(85px - (1000px - 100vw)/8);
     margin-bottom: calc(110px - (100px - 10vw)*1.5);
   }
 
-  .profile__line:last-of-type {
-    padding-bottom: calc(200px - (100px - 10vw)/2);
+  .profile__error {
+    padding-bottom: calc(163px - (100px - 10vw)/2);
   }
 }
 
@@ -100,8 +112,8 @@
     margin-bottom: 80px;
   }
 
-  .profile__line:last-of-type {
-    padding-bottom: 190px;
+  .profile__error {
+    padding-bottom: 153px;
   }
 }
 
@@ -121,8 +133,8 @@
 }
 
 @media screen and (max-width: 500px) and (min-height: 700px){
-  .profile__line:last-of-type {
-    padding-bottom: calc(100vh - 425px);
+  .profile__error {
+    padding-bottom: calc(100vh - 425px - 37px);
   }
 }
 
