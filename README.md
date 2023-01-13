@@ -11,3 +11,5 @@ Frontend https://movielib.nomoredomains.club
 Макет .fig
 https://disk.yandex.ru/d/7qbSjgUOJVf6Lw
 
+Pull-request:
+https://github.com/ulkerei/movies-explorer-frontend/pull/2
