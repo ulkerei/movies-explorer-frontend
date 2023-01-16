@@ -2,7 +2,7 @@ import './Navigation.css';
 import React from 'react';
 import iconX from '../../images/icon-x.svg';
 import AccountButton from '../AccountButton/AccountButton';
-
+import { Link } from 'react-router-dom';
 
 function Navigation(props) {
   return (
@@ -12,11 +12,11 @@ function Navigation(props) {
           <img className='navigation__x' src={iconX} alt='X'/>
         </button>
         <nav className='navigation__block'>
-          <a className='navigation__link' href='./' >Главная</a>
-          <a className='navigation__link' href='./movies'>Фильмы</a>
-          <a className='navigation__link' href='./saved-movies'>Сохранённые фильмы</a>
+          <Link className='navigation__link' to='./' >Главная</Link>
+          <Link className='navigation__link' to='./movies'>Фильмы</Link>
+          <Link className='navigation__link' to='./saved-movies'>Сохранённые фильмы</Link>
         </nav>
-        <AccountButton className='navigation__profile' />
+        <AccountButton className='navigation__profile' closeNav={props.closeNav}/>
       </div>
     </section>
   );

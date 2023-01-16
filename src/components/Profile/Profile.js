@@ -20,7 +20,7 @@ function Profile(props) {
   
   function handleNameChange(e) {
     setName(e.target.value);
-    const regex = /^[a-zа-яё♥ -]*$/i; //Можно же я оставлю тут сердечко)
+    const regex = /^[a-zа-яё♥ -]*$/i;
     const format = regex.test(e.target.value); 
     const minlength = e.target.value.length > 1;
     const maxlength = e.target.value.length < 31;
@@ -56,7 +56,6 @@ function Profile(props) {
     setIsValid((isNameValid && isEmailValid) && ((name !== currentUser.name) || (email !== currentUser.email)));
     (isNameValid && isEmailValid) && setError('');
   }, [isNameValid, isEmailValid, name, currentUser, email])
-
 
   return (
     <main className='profile'>

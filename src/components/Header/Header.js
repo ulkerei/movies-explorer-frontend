@@ -3,6 +3,7 @@ import dashes from '../../images/icon-dashes.svg'
 import React from 'react';
 import Logo from '../Logo/Logo';
 import AccountButton from '../AccountButton/AccountButton';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
@@ -10,10 +11,10 @@ function Header(props) {
       <Logo />
       {(props.loggedOn) ? (<>
       <div className='header__nav'>
-        <a className='header__link header__link_type_center' href='./movies' >Фильмы</a>
-        <a className='header__link header__link_type_center' href='./saved-movies' >Сохранённые фильмы</a>
+        <Link className='header__link header__link_type_center' to='./movies' >Фильмы</Link>
+        <Link className='header__link header__link_type_center' to='./saved-movies' >Сохранённые фильмы</Link>
       </div>
-      <AccountButton className='header__link header__link_type_profile' />
+      <AccountButton className='header__link header__link_type_profile' closeNav={props.closeNav}/>
       <button
         type='button' 
         className='header__link header__link_type_menu'
@@ -23,8 +24,8 @@ function Header(props) {
       </button>     
       </>) : (
       <div className='header__nav'>
-      <a className='header__link header__link_type_unsigned' href='./signup'>Регистрация</a>
-      <a className='header__link header__link_type_unsigned' href='./signin'>Войти</a>
+      <Link className='header__link header__link_type_unsigned' to='./signup'>Регистрация</Link>
+      <Link className='header__link header__link_type_unsigned' to='./signin'>Войти</Link>
     </div>
       )}
     </header>

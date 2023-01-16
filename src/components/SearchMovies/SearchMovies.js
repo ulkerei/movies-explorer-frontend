@@ -7,7 +7,6 @@ function SearchMovies(props) {
       openNav={props.openNav} 
       loggedOn={props.loggedOn} 
       classtype='search' 
-      key='search' 
       onSearch={props.onSearch} 
       onShortToggle={props.onShortToggle} 
       addShorts={props.addShorts}

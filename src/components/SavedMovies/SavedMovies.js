@@ -6,7 +6,6 @@ function SavedMovies(props) {
     <Movies 
       openNav={props.openNav} 
       classtype='saved' 
-      key='saved' 
       loggedOn={props.loggedOn}
       onSearch={props.onSearch} 
       onShortToggle={props.onShortToggle} 

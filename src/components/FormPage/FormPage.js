@@ -2,6 +2,7 @@ import './FormPage.css';
 import Logo from '../Logo/Logo'
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const validation = require('validator');
 
 function FormPage(props) {
@@ -18,7 +19,7 @@ function FormPage(props) {
 
   function handleNameChange(e) {
     setName(e.target.value);
-    const regex = /^[a-zа-яё♥ -]*$/i; //Можно я оставлю сердечко ♥
+    const regex = /^[a-zа-яё♥ -]*$/i;
     const format = regex.test(e.target.value); 
     const minlength = e.target.value.length > 1;
     const maxlength = e.target.value.length < 31;
@@ -118,10 +119,10 @@ function FormPage(props) {
       </form>
       <div className='formPage__footer'>
         <p className='formPage__text'>{props.text}</p>
-        <a href={`./${props.changeButton}`} 
+        <Link to={`./${props.changeButton}`} 
           className='button button_type_back button_type_link'
           styletype={props.changeButton} 
-        >{(props.changeButton === 'signin') ? 'Войти' : 'Регистрация'}</a>
+        >{(props.changeButton === 'signin') ? 'Войти' : 'Регистрация'}</Link>
       </div>
 
     </main>
