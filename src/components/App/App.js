@@ -124,8 +124,8 @@ function App() {
 
   function checkShorts(movies, timed) {
     let check;
-    timed ? check = addShorts : check = !addShorts;
-    if (check && movies) {movies = movies.filter(movie => movie.duration > 40);}
+    timed ? check = !addShorts : check = addShorts;
+    if (check && movies) {movies = movies.filter(movie => movie.duration <= 40);}
     return movies;
   }
 
