@@ -322,7 +322,7 @@ function App() {
     window.addEventListener('resize', setDisplayOptions);
     return () => {window.removeEventListener('resize', setDisplayOptions);}
   })
-  
+    
   useEffect(() => {
     const path = location.pathname;
     const token = localStorage.getItem('token');
@@ -338,7 +338,7 @@ function App() {
         if (localStorage.getItem('movies') && querry) {            
           setMovies(JSON.parse(localStorage.getItem('movies')), querry);
         }
-        history.push(path);
+        location.pathname !== '/signin' && history.push(path);
       })
       .catch(err => errorAlert(err));
     }
