@@ -40,3 +40,6 @@ npm run start
 
 Figma prototype .fig
 https://disk.yandex.ru/d/7qbSjgUOJVf6Lw
+
+##Update
+Added a movie card with info: year, country, description, etc. That's not a default feature, but I think It's beter to use info that we get from server than just forget about it.
