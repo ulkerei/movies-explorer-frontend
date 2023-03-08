@@ -15,6 +15,7 @@ import Navigation from '../Navigation/Navigation';
 import ErrorWindow from '../ErrorWindow/ErrorWindow';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import MovieInfo from '../MovieInfo/MovieInfo';
 
 import auth from '../../utils/Auth';
 import myApi from '../../utils/MainApi';
@@ -42,6 +43,21 @@ function App() {
   const [addShorts, setAddShorts] = useState(() => {
     if (localStorage.getItem('addShorts')) {return Boolean(JSON.parse(localStorage.getItem('addShorts')))} else return false;
   });
+
+  const [movieOpen, setMovieOpen] = useState(true);
+  const [activeMovie, setActiveMovie] = useState({
+    country: 'Тапьвия',
+    director: 'Алвловыж',
+    duration: '243',
+    year: '3012',
+    description: 'movie.description df,ngkjdnkdwjsalkfgja.dslkgnmv,md jdsbvjhb fdkjnvkjdsnc kj.dasnkjn vkjeMCV KLNCKJNV AJS VKJNLM Vfdn  kdfnv dx djs',
+    image: 'https://images.unsplash.com/photo-1675191475318-d2bf6bad1200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1675191475318-d2bf6bad1200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80',
+    trailerLink: 'https://www.youtube.com/watch?v=6p-X4WRP9rU',
+    movieId: 'movie.id',
+    nameRU: 'Навжыши уже ест попкорн.',
+    nameEN: 'Tjsdaaad - пользователь с таким email уже ест.'
+  })
 
   const [loggedOn, setLoggedOn] = useState(false);
   const [infoHeader, setInfoHeader] = useState('');
@@ -314,8 +330,17 @@ function App() {
     setInfoText(text || 'Упс, что-то пошло не так. Попробуйте ещё раз!');
   }
 
-  function onPopupClose () {
+  function onPopupClose() {
     setInfoOpen(false); 
+  }
+
+  function onCardClick(movie) {
+    setActiveMovie(movie);
+    setMovieOpen(true);
+  }
+
+  function onMovieClose(e) {
+    setMovieOpen(false);
   }
 
   useEffect(() => {
@@ -373,6 +398,7 @@ function App() {
               onLikeClick={onLikeClick}
               getMore={getMore}
               isMore={isMore}
+              onCardClick={onCardClick}
             />
           </ProtectedRoute>
           <ProtectedRoute path='/saved-movies' loggedOn={loggedOn} >
@@ -387,6 +413,7 @@ function App() {
               myMovies={myDisplayedMovies}
               isLoading={isLoading}
               onLikeClick={deleteMovie}
+              onCardClick={onCardClick}
             />
           </ProtectedRoute>
           <ProtectedRoute path='/profile' loggedOn={loggedOn}>
@@ -404,6 +431,7 @@ function App() {
         </Switch>
         <Navigation isOpen={navOpen} closeNav={closeNav}/>
         <ErrorWindow isOpen={infoOpen} status={infoHeader} message={infoText} onClose={onPopupClose} />
+        <MovieInfo isOpen={movieOpen} movie={activeMovie} onClose={onMovieClose}/>
       </div>
     </CurrentUserContext.Provider>
 

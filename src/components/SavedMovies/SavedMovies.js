@@ -15,6 +15,7 @@ function SavedMovies(props) {
       isLoading={props.isLoading}
       onLikeClick={props.onLikeClick}
       checkLike={props.checkLike}
+      onCardClick={props.onCardClick}
     />
   );
 }

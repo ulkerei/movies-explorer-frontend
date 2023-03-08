@@ -6,7 +6,6 @@ function MoviesCard(props) {
   const movie = props.movie;
   const name = movie.nameRU || movie.name;
   const time = movie.duration; 
-  const trailer = movie.trailerLink;
   const image = movie.image.url ? `https://api.nomoreparties.co/${movie.image.url}` : movie.image;
 
   const hours = Math.floor(time/60);
@@ -25,7 +24,8 @@ function MoviesCard(props) {
   }
 
   function onCardClick () {
-    window.open(trailer);
+  //  window.open(trailer);  - that was original action, but I don't like it
+    props.onCardClick(props.movie);
   }
 
   return (

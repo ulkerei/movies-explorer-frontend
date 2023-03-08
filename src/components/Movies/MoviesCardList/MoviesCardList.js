@@ -15,7 +15,9 @@ function MoviesCardList(props) {
           key={movie.id || movie._id} 
           classtype={props.classtype} 
           onLikeClick={props.onLikeClick} 
-          myMovies={props.myMovies}/>
+          myMovies={props.myMovies}
+          onCardClick={props.onCardClick}
+        />
       ))}
     </div>
   )  

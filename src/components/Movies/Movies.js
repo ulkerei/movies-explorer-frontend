@@ -19,7 +19,8 @@ function Movies(props) {
         movies={props.movies}
         myMovies={props.myMovies} 
         isLoading={props.isLoading} 
-        onLikeClick={props.onLikeClick} 
+        onLikeClick={props.onLikeClick}
+        onCardClick={props.onCardClick}
       />
       {(props.classtype === 'search' && props.isMore) ? <Button styletype='movies' text='Ещё' onClick={props.getMore}/> : <Filler text='' />}
       <Footer />

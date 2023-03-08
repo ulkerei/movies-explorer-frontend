@@ -17,6 +17,7 @@ function SearchMovies(props) {
       checkLike={props.checkLike}
       getMore={props.getMore}
       isMore={props.isMore}
+      onCardClick={props.onCardClick}
     />
   );
 }
