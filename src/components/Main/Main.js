@@ -10,15 +10,15 @@ import Portfolio from './Portfolio/Portfolio';
 
 function Main(props) {
   return (
-    <div className='main'>
-      <Header loggedOn={props.loggedOn} openNav={props.openNav}/>
+    <main className='main'>
+      <Header loggedOn={props.loggedOn} openNav={props.openNav} setPath={props.setPath} currentPath='/'/>
       <Promo />
       <AboutProject />
       <Techs />
       <AboutMe />
       <Portfolio />
       <Footer />
-    </div>
+    </main>
   );
 }
 

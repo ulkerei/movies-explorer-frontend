@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: flex-start;
   color: #fff;
+  background-color: #202020;
 }
 
 .formPage__header {
@@ -37,6 +38,10 @@
   font-weight: 400;
 }
 
+.formPage__label_hidden {
+  display: none;
+}
+
 .formPage__input {
   margin: 10px 0 20px;
   padding: 15px;
@@ -51,14 +56,18 @@
   font-weight: 400;
 }
 
+.formPage__input_hidden {
+  display: none;
+}
+
 .formPage__input:hover {
   background-color: #424242;
 }
 
 .formPage__input:focus {
-  background-color: #8b8b8b;
+  background-color: #00000080;
   outline: none;
-  color: #000;
+  border: 1px #fff solid;
 }
 
 .formPage__input_type_password {

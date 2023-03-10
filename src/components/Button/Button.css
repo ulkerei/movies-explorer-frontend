@@ -33,8 +33,12 @@
 }
 
 .button_type_blue:hover {
-  background-color: #000;
-  color: #4285f4;
+  background-color: #EE3465;
+}
+
+.button_type_blue_inactive, .button_type_blue_inactive:hover {
+  background-color: #424242;
+  color: #202020;
 }
 
 .button_type_movies {

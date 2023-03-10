@@ -73,6 +73,18 @@
   background-color: #3ddc84;
 }
 
+@media screen and (min-width: 1300px) {
+  .promo {
+    padding-left: calc(70px + (100vw - 1317px)/2);
+    padding-right: calc(70px + (100vw - 1317px)/2);
+  }
+
+  .promo__image {
+    right: calc(70px + (100vw - 1317px)/2);
+  }
+}
+
+
 @media screen and (max-width: 1000px) {
   .promo {
     padding-left: calc(70px - (1000px - 100vw)/10);

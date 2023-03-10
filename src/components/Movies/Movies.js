@@ -10,14 +10,21 @@ import Filler from './Filler/Filler';
 
 function Movies(props) {
   return (
-    <div className='movies'>
-      <Header loggedOn='true' openNav={props.openNav}/>
-      <SearchForm />
-      <Preloader isLoading={false} />
-      <MoviesCardList classtype={props.classtype} />
-      {(props.classtype === 'search') ? <Button styletype='movies' text='Ещё' /> : <Filler text='' />}
+    <main className='movies'>
+      <Header loggedOn={props.loggedOn} openNav={props.openNav} />
+      <SearchForm onSearch={props.onSearch} onShortToggle={props.onShortToggle} addShorts={props.addShorts} classtype={props.classtype}/>
+      <Preloader isLoading={props.isLoading} />
+      <MoviesCardList 
+        classtype={props.classtype} 
+        movies={props.movies}
+        myMovies={props.myMovies} 
+        isLoading={props.isLoading} 
+        onLikeClick={props.onLikeClick}
+        onCardClick={props.onCardClick}
+      />
+      {(props.classtype === 'search' && props.isMore) ? <Button styletype='movies' text='Ещё' onClick={props.getMore}/> : <Filler text='' />}
       <Footer />
-    </div>
+    </main>
   );
 }
 
